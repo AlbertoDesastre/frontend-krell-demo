@@ -1,0 +1,58 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ESTILOS GENERALES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+body {
+  background-color: #0b0e1c;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 4.5rem;
+  letter-spacing: 0.06em;
+}
+
+h2,
+h3 {
+  font-size: 1.875rem;
+}
+
+p,
+span {
+  font-size: 1.25rem;
+}
+
+/* BOTÓN VERDE QUE REDIRIGE A OTROS SITIOS */
+.special-anchor {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.special-anchor,
+.special-anchor span {
+  font-size: 20px;
+  font-weight: 800;
+  color: #2dd881;
+}
+
+.special-anchor span {
+  font-size: 25px;
+  transform: rotate(90deg);
+  transition: all 0.2s ease;
+}
+
+.special-anchor:hover span {
+  transform: rotate(90deg) translateY(-6px);
+}
