@@ -8,30 +8,38 @@
       <img :src="me" width="300" heigth="300" />
 
       <article class="bullet-points">
-        <p>Full-Stack developer, con enfoque en Front.</p>
-        <p>Graduado en DAW, por la Universidad Alfonso el Sabio X.</p>
-        <p>Más de 2 años de experiencia acumulada.</p>
+        <p>Full-Stack developer, con <span class="highlight"> enfoque en Front</span>.</p>
+        <p>
+          <span class="highlight">Graduado en DAW</span>, por la Universidad Alfonso el Sabio X.
+        </p>
+        <p>Más de <span class="highlight"> 2 años de experiencia</span> acumulada.</p>
       </article>
 
       <!-- Mis iconos con Github, Linkdein y el CV -->
       <SocialMedia />
     </article>
 
-    <article class="description">
-      <p>
-        Me metí en el apasionante mundo de la programación en 2021. ¡Empecé en un bootcamp por
-        casualidad y he terminado graduándome de un ciclo DAW!
-      </p>
-      <p>
-        He hecho de todo, desde liderar proyectos como Business Analyst & Project Manager hasta
-        diseñar mis propias APIs y crear Fronts personalizados hasta el más mínimo detalle.
-      </p>
-      <p>
-        Tengo el conocimiento y la paciencia necesaria para llevar cualquier proyecto adelante, ¡ya
-        sea en Front (mi especialidad) o Back!
-      </p>
+    <article class="description-container">
+      <div class="description">
+        <p>
+          Me metí en el apasionante mundo de la programación en 2021. ¡Empecé en un bootcamp por
+          casualidad y he terminado graduándome de un ciclo DAW!
+        </p>
+        <p>
+          He hecho de todo, desde liderar proyectos como Business Analyst & Project Manager hasta
+          diseñar mis propias APIs y crear Fronts personalizados hasta el más mínimo detalle.
+        </p>
+        <p>
+          Tengo el conocimiento y la paciencia necesaria para llevar cualquier proyecto adelante,
+          ¡ya sea en Front (mi especialidad) o Back!
+        </p>
+      </div>
 
-      <a class="special-anchor">MI EXPERIENCIA <span>^</span></a>
+      <article class="redirections">
+        <a class="special-anchor">MI EXPERIENCIA <span>^</span></a>
+        <a class="special-anchor">MI STACK <span>^</span></a>
+        <a class="special-anchor">MIS PROYECTOS <span>^</span></a>
+      </article>
     </article>
   </section>
 
@@ -106,6 +114,11 @@ h3 {
   margin-bottom: 10px;
 }
 
+.presentation {
+  margin-left: 10px;
+  width: 560px;
+}
+
 .presentation,
 .bullet-points {
   display: flex;
@@ -129,7 +142,13 @@ h3 {
   max-width: 70ch;
   line-height: 1.35;
 }
+
 .description p {
   margin: 0.5rem 0;
+}
+
+.redirections {
+  display: flex;
+  flex-direction: column;
 }
 </style>

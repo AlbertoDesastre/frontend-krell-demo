@@ -1,6 +1,12 @@
 /* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* VARIABLES */
+:root {
+  --color-highlight: #731dd8;
+  --green-lime: #2dd881;
+}
+
 /* ESTILOS GENERALES */
 * {
   margin: 0;
@@ -33,6 +39,16 @@ span {
   font-size: 1.25rem;
 }
 
+/* PARA PALABRAS DESTACADAS */
+.highlight {
+  color: var(--color-highlight);
+  text-decoration: underline;
+}
+
+.highlight:hover {
+  font-style: italic;
+}
+
 /* BOTÓN VERDE QUE REDIRIGE A OTROS SITIOS */
 .special-anchor {
   cursor: pointer;
@@ -44,7 +60,7 @@ span {
 .special-anchor span {
   font-size: 20px;
   font-weight: 800;
-  color: #2dd881;
+  color: var(--green-lime);
 }
 
 .special-anchor span {
