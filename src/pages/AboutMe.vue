@@ -71,7 +71,10 @@ h3 {
 
 /* Presentación con texto */
 .presentation-and-description-container {
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bullet-points {

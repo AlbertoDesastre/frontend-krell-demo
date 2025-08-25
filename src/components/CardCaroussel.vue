@@ -5,6 +5,21 @@
         <img :src="img.src" />
         <span>{{ img.text }}</span>
       </li>
+
+      <li class="card replica" v-for="img in props.imgs" :key="img.src">
+        <img :src="img.src" />
+        <span>{{ img.text }}</span>
+      </li>
+
+      <li class="card replica" v-for="img in props.imgs" :key="img.src">
+        <img :src="img.src" />
+        <span>{{ img.text }}</span>
+      </li>
+
+      <li class="card replica" v-for="img in props.imgs" :key="img.src">
+        <img :src="img.src" />
+        <span>{{ img.text }}</span>
+      </li>
     </ul>
   </section>
 </template>
@@ -21,7 +36,18 @@ const props = defineProps<{ imgs: CardImage[] }>()
 <style scoped>
 .card-list {
   display: flex;
-  overflow: scroll;
+  gap: 40px;
+  animation: scroll 40s linear infinite;
+}
+
+.card-caroussel:hover .card-list {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .card {
@@ -32,7 +58,7 @@ const props = defineProps<{ imgs: CardImage[] }>()
 
 .card img {
   width: 80px;
-  /*  filter: grayscale(100%) brightness(1.25); TODO: Hacer pruebas con este estilo más tarde*/
+  filter: grayscale(20%);
 }
 
 .card span {
