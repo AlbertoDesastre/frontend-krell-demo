@@ -119,4 +119,10 @@ h3 {
   display: flex;
   flex-direction: column;
 }
+
+/* Stack tecnológico */
+.stack-display-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
 </style>

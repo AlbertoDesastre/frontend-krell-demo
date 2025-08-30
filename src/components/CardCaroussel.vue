@@ -36,8 +36,8 @@ const props = defineProps<{ imgs: CardImage[] }>()
 <style scoped>
 .card-list {
   display: flex;
-  gap: 40px;
-  animation: scroll 40s linear infinite;
+  gap: 20px;
+  animation: scroll 70s linear infinite;
 }
 
 .card-caroussel:hover .card-list {
@@ -51,18 +51,20 @@ const props = defineProps<{ imgs: CardImage[] }>()
 }
 
 .card {
-  width: 200px;
-  height: 200px;
+  width: 100px;
   padding: 10px;
 }
 
 .card img {
   width: 80px;
+  display: block;
+  margin: 0 auto;
   filter: grayscale(20%);
 }
 
 .card span {
-  display: inline-block;
-  margin: 0px auto;
+  display: block;
+  text-align: center;
+  margin: 10px 0;
 }
 </style>

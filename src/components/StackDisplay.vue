@@ -1,8 +1,29 @@
 <template>
-  <!-- Stack tecnológico -->
-  <h3>Stack tecnológico</h3>
+  <section class="stack-display-container">
+    <!-- Texto de presentación -->
+    <p>UN PROBLEMA SÓLO ES UN RETO POR RESOLVER</p>
+    <h3 style="margin-bottom: 20px">Stack & Especialidad</h3>
 
-  <CardCaroussel :imgs />
+    <p>
+      Aunque soy Full-Stack me especializo en el área de desarrollo Front (lado del cliente web)
+    </p>
+
+    <p>
+      Desde HTML, CSS y JS Vanilla para proyectos pequeños hasta trabajos medianos y grandes con Vue
+      y React, con testing unitarios & de integración, interfaces limpias y responsivas, haciendo
+      uso Librerías de Componentes y APIs de terceros, manejadores de estado (Pinia, Redux). También
+      tengo experiencia diseñando mis propias APIs con Node.js y Nest.js.
+    </p>
+
+    <p>
+      Visita mi <a><span class="highlight">Linkedin</span></a> para más información.
+    </p>
+
+    <section class="shadow-wrapper">
+      <!-- Stack tecnológico -->
+      <CardCaroussel :imgs />
+    </section>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -44,3 +65,16 @@ const imgs: CardImage[] = [
   { src: vscode, text: 'VS Code' },
 ]
 </script>
+
+<style scoped>
+.stack-display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.shadow-wrapper {
+  box-shadow: 30 pink;
+}
+</style>
