@@ -1,18 +1,24 @@
 <template>
   <section class="project-card">
-    <article>
-      <h3>TIPO DE APLICACIÓN</h3>
-      <h2>TÍTULO DE LA APLICACIÓN</h2>
+    <article class="description">
+      <h3>{{ props.type }}</h3>
+      <h2>{{ props.name }}</h2>
 
-      <p><strong>Construido con:</strong> React, Vue, Javascript, SASS.</p>
+      <p>
+        {{ props.text }}
+      </p>
 
-      <GreenAnchor url="" text="Ver código" />
-      <GreenAnchor url="" text="Ver repositorio" />
+      <div class="anchors">
+        <GreenAnchor url="" text="Ver código" />
+        <GreenAnchor url="" text="Ver repositorio" />
+      </div>
     </article>
 
-    <article>
-      <img :src="nest" />
-      <img :src="leeer" />
+    <article class="thumbnail">
+      <img :src="props.img" />
+      <article class="technologies">
+        <span v-for="tech in technologies" :key="tech"> {{ tech }}</span>
+      </article>
     </article>
   </section>
 </template>
@@ -20,7 +26,75 @@
 <script setup lang="ts">
 import GreenAnchor from './GreenAnchor.vue'
 
-import nest from '@/imgs/nest.js.png'
-
-import leeer from '@/imgs/leeer-logo.png'
+const props = defineProps<{
+  type: string
+  name: string
+  text: string
+  img: string
+  technologies: string[]
+}>()
 </script>
+
+<style lang="css" scoped>
+.project-card {
+  display: flex;
+  gap: 20px;
+}
+
+h3,
+h2 {
+  margin-top: 12px;
+}
+
+h3 {
+  font-weight: 38;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+.description {
+  width: 500px;
+}
+
+.description p {
+  margin: 20px 0px;
+}
+
+.description .anchors {
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbnail {
+  position: relative;
+  max-width: 300px;
+}
+
+.thumbnail img {
+  width: 100%;
+  display: block;
+  margin: 12px auto 0 auto;
+}
+
+.thumbnail article {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.technologies {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.technologies span {
+  font-size: 12px;
+  padding: 6px 4px;
+  border-radius: 20px;
+  color: rgb(195, 189, 245);
+  background-color: rgb(44, 38, 94);
+  margin-top: 4px;
+  margin-right: 6px;
+}
+</style>

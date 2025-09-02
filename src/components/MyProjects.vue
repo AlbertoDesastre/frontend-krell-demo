@@ -10,14 +10,29 @@
       </p>
     </article>
 
-    <article>
-      <ProjectCard />
+    <article class="project-list">
+      <ProjectCard
+        :type="'Backend APP'"
+        :name="'leeer - API'"
+        :text="'loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum '"
+        :img="leeer"
+        :technologies="['Nest.js', 'Node', 'Typescript', 'MySQL', 'TypeORM', 'Postman', 'Swagger']"
+      />
+
+      <ProjectCard
+        :type="'Frontend APP'"
+        :name="'leeer'"
+        :text="'loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum '"
+        :img="leeer"
+        :technologies="['Vue', 'Vue Router', 'Pinia', 'Vitest', 'Typescript']"
+      />
     </article>
   </section>
 </template>
 
 <script setup lang="ts">
 import ProjectCard from './ProjectCard.vue'
+import leeer from '@/imgs/leeer-logo.png'
 </script>
 
 <style scoped>
@@ -25,9 +40,16 @@ import ProjectCard from './ProjectCard.vue'
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 
   max-width: 900px;
   margin: 20px auto;
+}
+
+.project-list {
+  width: 100%;
+}
+
+.project-list .project {
+  margin: 24px 0;
 }
 </style>
