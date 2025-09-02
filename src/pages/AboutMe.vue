@@ -36,18 +36,22 @@
       </div>
 
       <article class="redirections">
-        <a class="special-anchor">MI EXPERIENCIA <span>^</span></a>
-        <a class="special-anchor">MI STACK <span>^</span></a>
-        <a class="special-anchor">MIS PROYECTOS <span>^</span></a>
+        <GreenAnchor :url="''" :text="'MI EXPERIENCIA'" />
+        <GreenAnchor :url="''" :text="'MI STACK'" />
+        <GreenAnchor :url="''" :text="'MIS PROYECTOS'" />
       </article>
     </article>
   </section>
 
   <StackDisplay />
+
+  <MyProjects />
 </template>
 
 <script setup lang="ts">
 /* componentes */
+import GreenAnchor from '@/components/GreenAnchor.vue'
+import MyProjects from '@/components/MyProjects.vue'
 import SocialMedia from '@/components/SocialMedia.vue'
 import StackDisplay from '@/components/StackDisplay.vue'
 /* imagenes */

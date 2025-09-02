@@ -49,27 +49,3 @@ span {
 .highlight:hover {
   font-style: italic;
 }
-
-/* BOTÓN VERDE QUE REDIRIGE A OTROS SITIOS */
-.special-anchor {
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-}
-
-.special-anchor,
-.special-anchor span {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--green-lime);
-}
-
-.special-anchor span {
-  font-size: 25px;
-  transform: rotate(90deg);
-  transition: all 0.2s ease;
-}
-
-.special-anchor:hover span {
-  transform: rotate(90deg) translateY(-6px);
-}
