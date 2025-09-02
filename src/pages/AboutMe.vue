@@ -123,6 +123,6 @@ h3 {
 /* Stack tecnológico */
 .stack-display-container {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 </style>

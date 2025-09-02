@@ -19,10 +19,8 @@
       Visita mi <a><span class="highlight">Linkedin</span></a> para más información.
     </p>
 
-    <section class="shadow-wrapper">
-      <!-- Stack tecnológico -->
-      <CardCaroussel :imgs />
-    </section>
+    <!-- Stack tecnológico -->
+    <CardCaroussel :imgs />
   </section>
 </template>
 
@@ -72,9 +70,5 @@ const imgs: CardImage[] = [
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-}
-
-.shadow-wrapper {
-  box-shadow: 30 pink;
 }
 </style>
