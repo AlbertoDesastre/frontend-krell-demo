@@ -1,5 +1,5 @@
 <template>
-  <section class="project-card">
+  <section :id="props.name" class="project-card">
     <article class="description">
       <h3>{{ props.type }}</h3>
       <h2>{{ props.name }}</h2>
@@ -55,6 +55,9 @@ h2 {
 }
 
 .description {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
   width: 500px;
 }
 
@@ -62,9 +65,10 @@ h2 {
   margin: 20px 0px;
 }
 
-.description .anchors {
+.anchors {
   display: flex;
   flex-direction: column;
+  margin: auto 0;
 }
 
 .thumbnail {
@@ -90,7 +94,7 @@ h2 {
 
 .technologies span {
   font-size: 12px;
-  padding: 6px 4px;
+  padding: 6px 8px;
   border-radius: 20px;
   color: rgb(195, 189, 245);
   background-color: rgb(44, 38, 94);

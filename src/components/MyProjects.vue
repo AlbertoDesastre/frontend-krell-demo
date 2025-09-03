@@ -12,20 +12,25 @@
 
     <article class="project-list">
       <ProjectCard
-        :type="'Backend APP'"
-        :name="'leeer - API'"
-        :text="'loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum '"
-        :img="leeer"
-        :technologies="['Nest.js', 'Node', 'Typescript', 'MySQL', 'TypeORM', 'Postman', 'Swagger']"
+        v-for="project in projects"
+        :key="normalize(project.name)"
+        :type="project.type"
+        :name="project.name"
+        :text="project.text"
+        :img="project.img"
+        :technologies="project.technologies"
       />
 
-      <ProjectCard
-        :type="'Frontend APP'"
-        :name="'leeer'"
-        :text="'loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum '"
-        :img="leeer"
-        :technologies="['Vue', 'Vue Router', 'Pinia', 'Vitest', 'Typescript']"
-      />
+      <div class="sliders">
+        <a
+          :href="'#' + normalize(project.name)"
+          class="slider-anchor"
+          v-for="project in projects"
+          :key="normalize(project.name)"
+        >
+          <span></span>
+        </a>
+      </div>
     </article>
   </section>
 </template>
@@ -33,6 +38,41 @@
 <script setup lang="ts">
 import ProjectCard from './ProjectCard.vue'
 import leeer from '@/imgs/leeer-logo.png'
+
+type Project = {
+  type: string
+  name: string
+  text: string
+  img: string
+  technologies: string[]
+}
+const projects: Project[] = [
+  {
+    type: 'Backend APP',
+    name: 'leeer - API',
+    text: 'loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum',
+    img: leeer,
+    technologies: ['Nest.js', 'Node', 'Typescript', 'MySQL', 'TypeORM', 'Postman', 'Swagger'],
+  },
+  {
+    type: 'Frontend APP',
+    name: 'leeer',
+    text: 'loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum',
+    img: leeer,
+    technologies: ['Vue', 'Vue Router', 'Pinia', 'Vitest', 'Typescript'],
+  },
+
+  {
+    type: 'ANOTHER ONE',
+    name: 'oneeee',
+    text: 'loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum',
+    img: leeer,
+    technologies: ['Vue', 'Vue Router', 'Pinia', 'Vitest', 'Typescript'],
+  },
+]
+const normalize = (name: string): string => {
+  return name.toLowerCase().replace(/\s+/g, '').replace(/-/g, '')
+}
 </script>
 
 <style scoped>
@@ -51,5 +91,34 @@ import leeer from '@/imgs/leeer-logo.png'
 
 .project-list .project {
   margin: 24px 0;
+}
+
+.sliders {
+  display: flex;
+
+  gap: 10px;
+}
+
+.slider-anchor {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.slider-anchor span {
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  position: absolute;
+  border-radius: 50%;
+
+  transition: all 200ms ease;
+}
+
+.slider-anchor span.active {
+  width: 40px;
+  height: 40px;
 }
 </style>
