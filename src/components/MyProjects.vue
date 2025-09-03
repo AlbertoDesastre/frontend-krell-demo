@@ -14,28 +14,32 @@
       <ProjectCard
         v-for="project in projects"
         :key="normalize(project.name)"
+        :id="normalize(project.name)"
         :type="project.type"
         :name="project.name"
         :text="project.text"
         :img="project.img"
         :technologies="project.technologies"
       />
+    </article>
 
-      <div class="sliders">
-        <a
-          :href="'#' + normalize(project.name)"
-          class="slider-anchor"
-          v-for="project in projects"
-          :key="normalize(project.name)"
-        >
-          <span></span>
-        </a>
-      </div>
+    <article class="sliders">
+      <a
+        v-for="(project, slideIdx) in projects"
+        :href="'#' + normalize(project.name)"
+        class="slider-anchor"
+        :key="normalize(project.name)"
+        @click="activeIndex = slideIdx"
+      >
+        <span :class="{ active: slideIdx === activeIndex }"></span>
+      </a>
     </article>
   </section>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
 import ProjectCard from './ProjectCard.vue'
 import leeer from '@/imgs/leeer-logo.png'
 
@@ -70,6 +74,9 @@ const projects: Project[] = [
     technologies: ['Vue', 'Vue Router', 'Pinia', 'Vitest', 'Typescript'],
   },
 ]
+
+const activeIndex = ref(0)
+
 const normalize = (name: string): string => {
   return name.toLowerCase().replace(/\s+/g, '').replace(/-/g, '')
 }
@@ -87,6 +94,8 @@ const normalize = (name: string): string => {
 
 .project-list {
   width: 100%;
+  display: flex;
+  overflow: hidden;
 }
 
 .project-list .project {
@@ -95,21 +104,21 @@ const normalize = (name: string): string => {
 
 .sliders {
   display: flex;
-
-  gap: 10px;
 }
 
 .slider-anchor {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 10px;
+  height: 10px;
+  margin: 0 3px;
   z-index: 1;
   cursor: pointer;
 }
 
 .slider-anchor span {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
+
   background-color: gray;
   position: absolute;
   border-radius: 50%;
@@ -118,7 +127,8 @@ const normalize = (name: string): string => {
 }
 
 .slider-anchor span.active {
-  width: 40px;
-  height: 40px;
+  width: 15px;
+  height: 15px;
+  background-color: #2c265e;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section :id="props.name" class="project-card">
+  <section :id="props.id" class="project-card">
     <article class="description">
       <h3>{{ props.type }}</h3>
       <h2>{{ props.name }}</h2>
@@ -27,6 +27,7 @@
 import GreenAnchor from './GreenAnchor.vue'
 
 const props = defineProps<{
+  id: string
   type: string
   name: string
   text: string
