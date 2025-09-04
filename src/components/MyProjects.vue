@@ -12,7 +12,8 @@
 
     <article class="project-list">
       <ProjectCard
-        v-for="project in projects"
+        v-for="(project, slideIdx) in projects"
+        :class="{ active: slideIdx === activeIndex }"
         :key="normalize(project.name)"
         :id="normalize(project.name)"
         :type="project.type"
@@ -42,6 +43,8 @@ import { ref } from 'vue'
 
 import ProjectCard from './ProjectCard.vue'
 import leeer from '@/imgs/leeer-logo.png'
+import nest from '@/imgs/nest.js.png'
+import vue from '@/imgs/vue.js.png'
 
 type Project = {
   type: string
@@ -62,7 +65,7 @@ const projects: Project[] = [
     type: 'Frontend APP',
     name: 'leeer',
     text: 'loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum',
-    img: leeer,
+    img: vue,
     technologies: ['Vue', 'Vue Router', 'Pinia', 'Vitest', 'Typescript'],
   },
 
@@ -70,7 +73,7 @@ const projects: Project[] = [
     type: 'ANOTHER ONE',
     name: 'oneeee',
     text: 'loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum',
-    img: leeer,
+    img: nest,
     technologies: ['Vue', 'Vue Router', 'Pinia', 'Vitest', 'Typescript'],
   },
 ]
@@ -83,6 +86,7 @@ const normalize = (name: string): string => {
 </script>
 
 <style scoped>
+/* Estilos del contenedor */
 .projects-display-container {
   display: flex;
   flex-direction: column;
@@ -98,10 +102,54 @@ const normalize = (name: string): string => {
   overflow: hidden;
 }
 
-.project-list .project {
-  margin: 24px 0;
+/* Adaptaciones a proyectos */
+.project-card {
+  display: none;
 }
 
+.project-card.active {
+  display: inherit;
+  animation: shake 200ms linear;
+}
+
+.project-card.active .thumbnail img {
+  animation: shake 20000ms linear;
+  animation-iteration-count: 5;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotateZ(1deg) scale(1.1);
+  }
+
+  25% {
+    transform: rotateZ(-1deg);
+  }
+
+  50% {
+    transform: rotateZ(1deg);
+  }
+
+  75% {
+    transform: rotateZ(-1deg);
+  }
+
+  100% {
+    transform: rotateZ(1deg);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.9);
+  }
+}
+
+/* Estilo de los Sliders */
 .sliders {
   display: flex;
 }
@@ -129,6 +177,8 @@ const normalize = (name: string): string => {
 .slider-anchor span.active {
   width: 15px;
   height: 15px;
+  margin-top: -5px;
+  margin-left: -3px;
   background-color: #2c265e;
 }
 </style>
