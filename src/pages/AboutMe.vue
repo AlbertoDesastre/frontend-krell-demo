@@ -1,7 +1,8 @@
 <template>
   <!-- Presentación -->
   <h1>ALBERTO ARMAS</h1>
-  <h2>FRONT-END DEVELOPER</h2>
+  <h2>FULL-STACK DEVELOPER</h2>
+  <h3>(React/Vue + Nest.js/Node)</h3>
 
   <section class="presentation-and-description-container">
     <article class="presentation">
@@ -21,18 +22,42 @@
 
     <article class="description-container">
       <div class="description">
+        <h2>Sobre mí</h2>
         <p>
-          Me metí en el apasionante mundo de la programación en 2021. ¡Empecé en un bootcamp por
-          casualidad y he terminado graduándome de un ciclo DAW!
+          Soy desarrollador y analista orientado a producto. Me muevo bien entre negocio y código:
+          traduzco requisitos en soluciones reales y escalables acompañadas de
+          <strong>pruebas automatizadas y código limpio.</strong>
         </p>
+
+        <ul class="bullets">
+          <li>
+            Último rol:
+            <strong>Developer & Functional Analyst / PM en Thalamus</strong>(eCommerce/CRM).
+          </li>
+          <li>
+            Inglés profesional; trabajo con equipos de
+            <strong>Bulgaria, Lituania, Austria</strong>, etc.
+          </li>
+          <li>
+            Mentalidad <strong> clean code, SOLID, arquitectura hexagonal </strong>y foco en
+            entregar valor.
+          </li>
+        </ul>
+
         <p>
-          He hecho de todo, desde liderar proyectos como Business Analyst & Project Manager hasta
-          diseñar mis propias APIs y crear Fronts personalizados hasta el más mínimo detalle.
+          <strong>Si quieres trabajar conmigo te interesa saber que...</strong>
         </p>
-        <p>
-          Tengo el conocimiento y la paciencia necesaria para llevar cualquier proyecto adelante,
-          ¡ya sea en Front (mi especialidad) o Back!
-        </p>
+        <ul class="bullets">
+          <li>
+            Soy una mezcla de <strong>BA/PM + Dev</strong> → menos fricción entre negocio y equipo
+            técnico.
+          </li>
+          <li>Me gusta el <strong>Testing</strong> (unitarias, integración y E2E).</li>
+          <li>
+            Tengo <strong>autonomía</strong> y comunicación clara; acostumbrado a entornos
+            exigentes.
+          </li>
+        </ul>
       </div>
 
       <article class="redirections">
@@ -61,7 +86,8 @@ import me from '@/imgs/me.webp'
 <style scoped>
 /* Textos*/
 h1,
-h2 {
+h2,
+h3 {
   text-align: center;
 }
 
@@ -69,8 +95,21 @@ h1 {
   font-weight: 100;
 }
 
+h2 {
+  font-weight: 500;
+}
+
 h3 {
-  margin: 1rem 0 0.25rem;
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+
+li {
+  font-size: 18px;
+}
+
+strong {
+  font-weight: 600;
 }
 
 /* Presentación con texto */
@@ -81,14 +120,20 @@ h3 {
   align-items: center;
 }
 
-.bullet-points {
-  margin-top: 20px;
-  margin-bottom: 10px;
+.bullets {
+  margin-top: 12px;
+  margin-left: 40px;
+  list-style: circle;
 }
 
 .presentation {
   margin-left: 10px;
   width: 560px;
+}
+
+.bullet-points {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .presentation,
@@ -120,6 +165,7 @@ h3 {
 }
 
 .redirections {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }

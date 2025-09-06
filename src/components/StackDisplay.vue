@@ -5,14 +5,13 @@
     <h3 style="margin-bottom: 20px">Stack & Especialidad</h3>
 
     <p>
-      Aunque soy Full-Stack me especializo en el área de desarrollo Front (lado del cliente web)
+      Desde HTML, CSS y JS Vanilla para proyectos pequeños hasta trabajos medianos y grandes con Vue
+      y React, con testing unitarios & de integración, interfaces limpias y responsivas.
     </p>
 
     <p>
-      Desde HTML, CSS y JS Vanilla para proyectos pequeños hasta trabajos medianos y grandes con Vue
-      y React, con testing unitarios & de integración, interfaces limpias y responsivas, haciendo
-      uso Librerías de Componentes y APIs de terceros, manejadores de estado (Pinia, Redux). También
-      tengo experiencia diseñando mis propias APIs con Node.js y Nest.js.
+      Uso Librerías de Componentes, APIs de terceros y gestores de estado como Pinia, Redux. (¡Hasta
+      diseño mis propias APIs con Node/Nest.js!)
     </p>
 
     <p>
@@ -21,6 +20,7 @@
 
     <!-- Stack tecnológico -->
     <CardCaroussel :imgs />
+    <CardCaroussel :imgs :reverse="true" />
   </section>
 </template>
 
@@ -62,9 +62,17 @@ const imgs: CardImage[] = [
   { src: nest, text: 'Nest.js' },
   { src: vscode, text: 'VS Code' },
 ]
+
+const back = []
+const front = []
 </script>
 
 <style scoped>
+p {
+  margin: 6px;
+  text-align: center;
+}
+
 .stack-display-container {
   display: flex;
   flex-direction: column;

@@ -1,7 +1,7 @@
 <template>
   <section class="shadow-wrapper">
     <section class="card-caroussel">
-      <ul class="card-list">
+      <ul :class="['card-list', { reverse: reverse }]">
         <li class="card" v-for="img in props.imgs" :key="img.src">
           <img :src="img.src" />
           <span>{{ img.text }}</span>
@@ -32,7 +32,7 @@ export type CardImage = {
   text: string
 }
 
-const props = defineProps<{ imgs: CardImage[] }>()
+const props = defineProps<{ imgs: CardImage[]; reverse?: boolean }>()
 </script>
 
 <style scoped>
@@ -60,10 +60,16 @@ const props = defineProps<{ imgs: CardImage[] }>()
   background: linear-gradient(to left, var(--background-black) 10%, transparent);
 }
 
-.card-list {
+.card-list,
+.card-list.reverse {
   display: flex;
   gap: 20px;
   animation: scroll 110s linear infinite;
+}
+
+.card-list.reverse {
+  flex-direction: row-reverse;
+  animation: scroll-reverse 110s linear infinite;
 }
 
 .card-caroussel:hover .card-list {
@@ -74,6 +80,14 @@ const props = defineProps<{ imgs: CardImage[] }>()
   to {
     transform: translateX(
       -1000%
+    ); /* En realidad esto más los segundos de animación en card-list es lo que aumenta la velocidad. */
+  }
+}
+
+@keyframes scroll-reverse {
+  to {
+    transform: translateX(
+      1000%
     ); /* En realidad esto más los segundos de animación en card-list es lo que aumenta la velocidad. */
   }
 }
